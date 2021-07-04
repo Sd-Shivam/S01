@@ -1,6 +1,8 @@
 import os
+import time
 import pickle
 import smtplib
+import schedule
 from time import sleep
 from selenium import webdriver
 from email.message import EmailMessage
@@ -72,16 +74,22 @@ def mail_html(classes):
         line=lin.split('\n')
         class_html=class_html + f'''<tr><td>{line[0]}</td><td>{line[-3]}</td><td>{line[-2]}</td></tr>'''
     
-    email_html=f'''<body style="padding: 10%;"> <div> <h3>Hi sir,</h3> <div style=" margin: 52px;margin-top: 5px; font-size: inherit; font-family: cursive; " > <div> A very plesant Good Morning Shivam sir </div> <br> <div> 💖 You are ☆Smart☆  ,  You are ☆Amazing☆ <br> 💖 You are ☆Beautiful☆  ,  You are ☆Enough☆ <br>💖 Don't let anyone make you think otherwise.</div> <br> <div>You have <span style=" color: skyblue; font-family: fantasy; font-size: 24px; ">{len(classes)}</span> Class today. </div> </div> <div> <table style="font-family: cursive; font-size: inherit; border: 3px solid whitesmoke; border-radius: 17px; padding: 17px;background-color: aliceblue; "> <tr > <th colspan="2"> <u> <i> {tody}</i></u></th> </tr> <tr > <th>Time</th> <th>Class</th> <th>Teacher</th> </tr> {class_html} </table> </div> </div> </body>'''
+    email_html=f'''<body style="padding: 10%;"> <div> <span style="font-size: 19px;font-family: cursive;"> Hi <img src="https://raw.githubusercontent.com/Sd-Shivam/Sd-Shivam/main/Hi.gif" width="25px"> sir,</span> <div style=" margin: 52px;margin-top: 5px; font-size: inherit; font-family: cursive; " > <div> A very plesant Good Morning Shivam sir </div> <br> <div> ♡ You are ☆Smart☆  ,  You are ☆Amazing☆ <br> ♡ You are ☆Beautiful☆  ,  You are ☆Enough☆ <br>♡ Don't let anyone make you think otherwise.</div> <br> <div>You have <span style=" color: skyblue; font-family: fantasy; font-size: 24px; ">{len(classes)}</span> Class today. </div> </div> <div> <table style="font-family: cursive; font-size: inherit; border: 3px solid whitesmoke; border-radius: 17px; padding: 17px;background-color: aliceblue; "> <tr > <th colspan="2"> <u> <i> {tody}</i></u></th> </tr> <tr > <th>Time</th> <th>Class</th> <th>Teacher</th> </tr> {class_html} </table> </div> </div> </body>'''
     return email_html
 
 
-# local_salanium()
-heroku_salnum()
-cookies_load('shivam')
-open_sedul()
-classes_list= class_lists_fun()
-mail_body=mail_html(classes_list)
-mail(mail_body)
+def run_server():
+    # local_salanium()
+    heroku_salnum()
+    cookies_load('shivam')
+    open_sedul()
+    classes_list= class_lists_fun()
+    mail_body=mail_html(classes_list)
+    mail(mail_body)
 
-  
+
+  schedule.every().day.at("05:00").do(run_server)
+
+  while True:
+    schedule.run_pending()
+    time.sleep(1)
