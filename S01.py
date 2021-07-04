@@ -88,8 +88,8 @@ def run_server():
     mail(mail_body)
 
 
-  schedule.every().day.at("05:00").do(run_server)
+schedule.every().day.at("05:00").do(run_server)
 
-  while True:
-    schedule.run_pending()
-    time.sleep(1)
+while True:
+schedule.run_pending()
+time.sleep(1)
