@@ -14,6 +14,15 @@ def local_salanium():
     browser = webdriver.Chrome(executable_path=chromedriver_path)
     browser.get('https://www.vedantu.com')
 
+def py_anywher():
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-gpu")
+    global browser
+    browser = webdriver.Chrome(options=chrome_options)
+    browser.get('https://www.vedantu.com')
+
+
 def heroku_salnum():
     op = webdriver.ChromeOptions()
     op.add_argument('--disable-gpu')
@@ -80,16 +89,19 @@ def mail_html(classes):
 
 def run_server():
     # local_salanium()
-    heroku_salnum()
+    # heroku_salnum()
+    py_anywher()
     cookies_load('shivam')
     open_sedul()
+    print('i am on duity sir.........')
     classes_list= class_lists_fun()
     mail_body=mail_html(classes_list)
     mail(mail_body)
 
 
-  schedule.every().day.at("05:00").do(run_server)
+run_server()
+#   schedule.every().day.at("05:00").do(run_server)
 
-  while True:
-    schedule.run_pending()
-    time.sleep(1)
+#   while True:
+#     schedule.run_pending()
+#     time.sleep(1)
