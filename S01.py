@@ -9,7 +9,7 @@ from typing import Protocol
 import schedule
 from time import sleep
 
-# update basic detail
+# update basic detail 
 # here
  
 ##--------- browser driver control center ----------------------------

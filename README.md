@@ -9,7 +9,7 @@ Go to your google account then security then app and create a gmail app and copy
    git clone https://github.com/Sd-Shivam/S01.git
    ```
 2. Install Django
-   ```sh
+   ```sh 
    pip install -r requirements.txt
    ```
 3. Update the basic setup
