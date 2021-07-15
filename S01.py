@@ -92,8 +92,8 @@ def mail_html(classes):
 
 
 def run_server():
-    local_salanium()
-    # heroku_salnum()
+    # local_salanium()
+    heroku_salnum()
     # py_anywher()
     cookies_load(name)
     # cookies_save(name)
