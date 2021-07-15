@@ -1,0 +1,60 @@
+# Schedule Bot
+S01 is a bot which send your daily schedule in your inbox.Now it's time to not miss any session.
+
+Go to your google account then security then app and create a gmail app and copy the password.
+
+## Basic Custom Details Update
+```python
+# add all this in 1st line
+
+from selenium import webdriver
+from email.message import EmailMessage
+
+# Change to your preferance once only
+name='Shivam'
+Mail_subject='Today Vedantu Class Schedule'
+From_mail='sd.shivam.00@gmail.com'
+Reciver_mail='sd.shivam.00@gmail.com'
+google_app_pass='wg***********yxyt' 
+chromedriver_exe_path='S:\project_work\**\**\chromedriver\chromedriver.exe'
+```
+## If you using first Time setup
+```python
+# add all this in last line
+# login once to store cookies for auto login
+
+def run_server():
+    local_salanium('https://www.vedantu.com/my-schedule?view=ALL')
+    # heroku_salnum()
+    # py_anywher()
+    sleep(40)
+    cookies_save(name)
+    open_sedul()
+    print('i am on duity sir.........')
+    classes_list= class_lists_fun()
+    mail_body=mail_html(classes_list)
+    mail(mail_body)
+    print('all done')
+
+run_server()
+
+```
+## If you logined once and have name.pkl file
+```python
+# replace to first time use code
+
+def run_server():
+    local_salanium('https://www.vedantu.com')
+    # heroku_salnum()
+    # py_anywher()
+    cookies_load(name)
+    open_sedul()
+    print('i am on duity sir.........')
+    classes_list= class_lists_fun()
+    mail_body=mail_html(classes_list)
+    mail(mail_body)
+    print('all done')
+
+run_server()
+
+```
