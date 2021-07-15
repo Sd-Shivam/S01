@@ -92,22 +92,11 @@ def mail_html(classes):
 
 
 def run_server():
-    # local_salanium()
-    heroku_salnum()
+    local_salanium()
+    # heroku_salnum()
     # py_anywher()
-    try:
-        # name=str(input('Please enter your name: '))
-        name='shivam'
-        global name
-        cookies_load(name)
-    except:
-        browser.execute_script("alert('Please Login once so that we can store cookies for further autmatic login(you have 30 sec)');")
-        sleep(30)
-        name=str(input('Please enter your name: '))
-        global name
-        cookies_save(name)
-        
-
+    cookies_load(name)
+    # cookies_save(name)
     open_sedul()
     print('i am on duity sir.........')
     classes_list= class_lists_fun()
@@ -115,6 +104,8 @@ def run_server():
     mail(mail_body)
 
 
+
+name='shivam'
 run_server()
 #   schedule.every().day.at("05:00").do(run_server)
 
