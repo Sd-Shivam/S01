@@ -1,5 +1,5 @@
 # Schedule Bot
-S01 is a bot which send your daily schedule in your inbox.Now it's time to not miss any session.
+S01 is a bot which send your daily vedantu schedule in your inbox.Now it's time to not miss any session.
 
 Go to your google account then security then app and create a gmail app and copy the password.
 
