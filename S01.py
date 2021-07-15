@@ -11,7 +11,7 @@ from time import sleep
 
 # update basic detail
 # here
-
+ 
 ##--------- browser driver control center ----------------------------
 def local_salanium(url):
     chromedriver_path =chromedriver_exe_path

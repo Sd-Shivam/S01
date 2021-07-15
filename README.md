@@ -4,7 +4,7 @@ S01 is a bot which send your daily vedantu schedule in your inbox.Now it's time 
 Go to your google account then security then app and create a gmail app and copy the password.
 
 ### [🔬] Installation
-1. Clone the repo
+1. Clone the repo 
    ```sh
    git clone https://github.com/Sd-Shivam/S01.git
    ```
