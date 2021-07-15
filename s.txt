@@ -1,5 +1,0 @@
-selenium==3.141.0
-urllib3==1.26.5
-secure-smtplib==0.1.1
-gunicorn==20.1.0
-schedule==1.1.0
