@@ -3,6 +3,25 @@ S01 is a bot which send your daily schedule in your inbox.Now it's time to not m
 
 Go to your google account then security then app and create a gmail app and copy the password.
 
+### [🔬] Installation
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Sd-Shivam/S01.git
+   ```
+2. Install Django
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. Update the basic setup
+   ```sh
+   #from the readme file give bello
+   ```
+ 4. Run the Program
+   ```sh
+   Python S01.py
+   ```  
+
+
 ## Basic Custom Details Update
 ```python
 # add all this in 1st line
