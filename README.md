@@ -55,7 +55,7 @@ def run_server():
     mail(mail_body)
     print('all done')
 
-run_server()
+
 
 ```
 ## If you logined once and have name.pkl file
@@ -74,8 +74,17 @@ def run_server():
     mail(mail_body)
     print('all done')
 
-run_server()
 
+```
+
+## Add this to auto check 
+```python
+# add to auto check schedule everymorning
+schedule.every().day.at("05:00").do(run_server)
+
+while True:
+ schedule.run_pending()
+ time.sleep(1)
 ```
 
 ### Contribute
