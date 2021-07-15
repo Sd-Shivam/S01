@@ -8,15 +8,16 @@ import smtplib
 from typing import Protocol
 import schedule
 from time import sleep
-from selenium import webdriver
-from email.message import EmailMessage
+
+# update basic detail
+# here
 
 ##--------- browser driver control center ----------------------------
-def local_salanium():
-    chromedriver_path ='S:\project_work\Insta\chromedriver\chromedriver.exe' 
+def local_salanium(url):
+    chromedriver_path =chromedriver_exe_path
     global browser
     browser = webdriver.Chrome(executable_path=chromedriver_path)
-    browser.get('https://www.vedantu.com')
+    browser.get(url)
 
 def py_anywher():
     chrome_options = webdriver.ChromeOptions()
@@ -74,11 +75,11 @@ def class_lists_fun():
 def mail(body):
     msg = EmailMessage()
     msg['Subject'] = 'Today Vedantu Class Schedule'
-    msg['From'] = 'sd.shivam.00@gmail.com'
-    msg['To'] = 'sd.shivam.00@gmail.com'
+    msg['From'] = From_mail
+    msg['To'] = Reciver_mail
     msg.set_content(body ,subtype='html')
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login('sd.shivam.00@gmail.com', "wgukquumhisgyxyt")
+        smtp.login(From_mail, google_app_pass)
         smtp.send_message(msg)
 
 def mail_html(classes):
@@ -87,28 +88,8 @@ def mail_html(classes):
         line=lin.split('\n')
         class_html=class_html + '''<tr><td>'''+line[0]+'''</td><td>'''+line[-3]+'''</td><td>'''+line[-2]+'''</td></tr>'''
 
-    email_html=f'''<body style="padding: 5%;"> <div> <h3>Hi sir,</h3> <div style=" margin: 52px;margin-top: 5px; font-size: inherit; font-family: cursive; " > <div> A very plesant Good Morning {name} sir </div> <br> <div> ♡ You are ☆Smart☆  ,  You are ☆Amazing☆ <br> ♡ You are ☆Beautiful☆  ,  You are ☆Enough☆ <br>♡ Don't let anyone make you think otherwise.</div> <br> <div>You have <span style=" color: skyblue; font-family: fantasy; font-size: 24px; ">'''+str(len(classes))+'''</span> Class today. </div> </div> <div> <table style="font-family: cursive; font-size: inherit; border: 3px solid whitesmoke; border-radius: 17px; padding: 17px;background-color: aliceblue; "> <tr > <th colspan="2"> <u> <i> '''+tody+'''</i></u></th> </tr> <tr > <th>Time</th> <th>Class</th> <th>Teacher</th> </tr> '''+class_html +'''</table> </div> </div> </body>'''
+    email_html=f'''<body style="padding: 5%;"> <div> <h3>Hi sir,</h3> <div style=" margin: 52px;margin-top: 5px; font-size: inherit; font-family: cursive; " > <div> A very plesant Good Morning {name} sir </div> <br> <div> ♡ You are ☆Smart☆  ,  You are ☆Amazing☆ <br> ♡ You are ☆Beautiful☆  ,  You are ☆Enough☆ <br>♡ Don't let anyone make you think otherwise.</div> <br> <div>You have <span style=" color: skyblue; font-family: fantasy; font-size: 24px; ">'{str(len(classes))}</span> Class today. </div> </div> <div> <table style="font-family: cursive; font-size: inherit; border: 3px solid whitesmoke; border-radius: 17px; padding: 17px;background-color: aliceblue; "> <tr > <th colspan="2"> <u> <i> {tody}</i></u></th> </tr> <tr > <th>Time</th> <th>Class</th> <th>Teacher</th> </tr> {class_html}</table> </div> </div> </body>'''
     return email_html
 
 
-def run_server():
-    # local_salanium()
-    heroku_salnum()
-    # py_anywher()
-    cookies_load(name)
-    # cookies_save(name)
-    open_sedul()
-    print('i am on duity sir.........')
-    classes_list= class_lists_fun()
-    mail_body=mail_html(classes_list)
-    mail(mail_body)
-
-
-
-name='shivam'
-run_server()
-#   schedule.every().day.at("05:00").do(run_server)
-
-#   while True:
-#     schedule.run_pending()
-#     time.sleep(1)
+#add first time code or other here
